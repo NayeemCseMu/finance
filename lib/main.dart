@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:finance/config/routes/routes.dart';
+import 'package:finance/presentations/config/routes/routes.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'core/walk_through/walk_through.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,8 +20,15 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: WalkThroughScreen.routeName,
-      routes: routes,
+      initialRoute: RouteNames.splash,
+      onGenerateRoute: RouteNames.generateRoute,
+      onUnknownRoute: (RouteSettings settings) {
+        return MaterialPageRoute(
+          builder: (_) => Scaffold(
+            body: Center(child: Text('No route defined for ${settings.name}')),
+          ),
+        );
+      },
     );
   }
 }

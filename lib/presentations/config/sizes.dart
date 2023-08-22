@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
 class ResponsiveSize {
-  static MediaQueryData _mediaQueryData;
-  static double screenHeight;
-  static double screenWidth;
-  static Orientation orientation;
+  static MediaQueryData? _mediaQueryData;
+  static double? screenHeight;
+  static double? screenWidth;
+  static Orientation? orientation;
 
   static void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
 
-    orientation = _mediaQueryData.orientation;
+    orientation = _mediaQueryData!.orientation;
 
     if (orientation == Orientation.portrait) {
-      screenHeight = _mediaQueryData.size.height;
-      screenWidth = _mediaQueryData.size.width;
+      screenHeight = _mediaQueryData!.size.height;
+      screenWidth = _mediaQueryData!.size.width;
     } else {
-      screenHeight = _mediaQueryData.size.width;
-      screenWidth = _mediaQueryData.size.height;
+      screenHeight = _mediaQueryData!.size.width;
+      screenWidth = _mediaQueryData!.size.height;
     }
     // print(screenHeight);
     // print(screenWidth);
@@ -24,15 +24,15 @@ class ResponsiveSize {
 }
 
 double getScreenHeight(double inputHeight) {
-  return (inputHeight / 812) * ResponsiveSize.screenHeight;
+  return (inputHeight / 812) * ResponsiveSize.screenHeight!;
 }
 
 double getScreeWidth(double inputWidth) {
-  return (inputWidth / 375) * ResponsiveSize.screenWidth;
+  return (inputWidth / 375) * ResponsiveSize.screenWidth!;
 }
 
 double getTextSize(double inputSize) {
-  return (inputSize / 812) * ResponsiveSize.screenHeight;
+  return (inputSize / 812) * ResponsiveSize.screenHeight!;
 }
 
 Widget getVerticalSpace(double height) {

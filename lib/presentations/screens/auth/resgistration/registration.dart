@@ -1,11 +1,11 @@
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:finance/config/sizes.dart';
-import 'package:finance/constants/app_text.dart';
-import 'package:finance/constants/assets_path.dart';
-import 'package:finance/widgets/custom_button.dart';
+import 'package:finance/presentations/config/sizes.dart';
+import 'package:finance/presentations/utils/app_text.dart';
+import 'package:finance/presentations/utils/assets_path.dart';
+import 'package:finance/presentations/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../constants/app_constants.dart';
+import '../../../utils/app_constants.dart';
 
 class RegistrationScreen extends StatelessWidget {
   static final String routeName = "/registration";
@@ -79,10 +79,10 @@ class RegistrationScreen extends StatelessWidget {
                                 favorite: ['+39', 'FR'],
                                 countryFilter: ['IT', 'FR'],
                                 showFlagDialog: false,
-                                comparator: (a, b) => b.name.compareTo(a.name),
+                                comparator: (a, b) => b.name!.compareTo(a.name!),
                                 //Get the country information relevant to the initial selection
                                 onInit: (code) => print(
-                                    "on init ${code.name} ${code.dialCode} ${code.name}"),
+                                    "on init ${code!.name} ${code.dialCode} ${code.name}"),
                               ),
                             ),
                             Container(

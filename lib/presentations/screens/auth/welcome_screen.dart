@@ -1,15 +1,15 @@
-import 'package:finance/config/sizes.dart';
-import 'package:finance/constants/app_constants.dart';
-import 'package:finance/constants/app_text.dart';
-import 'package:finance/constants/assets_path.dart';
-import 'package:finance/core/auth/resgistration/registration.dart';
-import 'package:finance/widgets/custom_button.dart';
+import 'package:finance/presentations/config/sizes.dart';
+import 'package:finance/presentations/utils/app_constants.dart';
+import 'package:finance/presentations/utils/app_text.dart';
+import 'package:finance/presentations/utils/assets_path.dart';
+import 'package:finance/presentations/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import 'resgistration/registration.dart';
+
 class WelcomScreen extends StatelessWidget {
-  static final String routeName = "/welcome";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

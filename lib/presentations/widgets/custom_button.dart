@@ -1,5 +1,5 @@
-import 'package:finance/config/sizes.dart';
-import 'package:finance/constants/app_constants.dart';
+import 'package:finance/presentations/config/sizes.dart';
+import 'package:finance/presentations/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -10,12 +10,12 @@ class CustomButton extends StatelessWidget {
   final bool isElevated;
 
   const CustomButton({
-    @required this.text,
-    @required this.textColor,
-    @required this.buttonColor,
-    @required this.press,
-    @required this.isElevated,
-  }) : assert(text != null, textColor != null);
+    required this.text,
+    required this.textColor,
+    required this.buttonColor,
+    required this.press,
+    required this.isElevated,
+  });
   @override
   Widget build(BuildContext context) {
     return isElevated
@@ -35,10 +35,10 @@ class CustomElevatedButton extends StatelessWidget {
   final VoidCallback press;
 
   const CustomElevatedButton({
-    @required this.text,
-    @required this.color,
-    @required this.buttonColor,
-    @required this.press,
+    required this.text,
+    required this.color,
+    required this.buttonColor,
+    required this.press,
   });
   @override
   Widget build(BuildContext context) {
@@ -66,9 +66,9 @@ class CustomTextButton extends StatelessWidget {
   final VoidCallback press;
 
   const CustomTextButton({
-    @required this.text,
-    @required this.color,
-    @required this.press,
+    required this.text,
+    required this.color,
+    required this.press,
   });
   @override
   Widget build(BuildContext context) {

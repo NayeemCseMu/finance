@@ -1,4 +1,4 @@
-import 'package:finance/config/sizes.dart';
+import 'package:finance/presentations/config/sizes.dart';
 import 'package:flutter/material.dart';
 
 /*<-----------------App Color----------------->*/

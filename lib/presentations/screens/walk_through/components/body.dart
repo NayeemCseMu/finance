@@ -1,7 +1,7 @@
-import 'package:finance/config/sizes.dart';
-import 'package:finance/constants/app_constants.dart';
-import 'package:finance/constants/app_text.dart';
-import 'package:finance/constants/assets_path.dart';
+import 'package:finance/presentations/config/sizes.dart';
+import 'package:finance/presentations/utils/app_constants.dart';
+import 'package:finance/presentations/utils/app_text.dart';
+import 'package:finance/presentations/utils/assets_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -22,7 +22,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  PageController _pageController;
+  late PageController _pageController;
   int pageIndex = 0;
   @override
   void initState() {
@@ -48,33 +48,37 @@ class _BodyState extends State<Body> {
                   });
                 },
                 itemBuilder: (ctx, index) {
-                  return Column(children: [
-                    SvgPicture.asset(
-                      walkthroughIllustration[index],
-                      fit: BoxFit.cover,
-                    ),
-                    getVerticalSpace(42),
-                    Text(
-                      walkthrughHeading[index],
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: getTextSize(28),
-                          color: kDarkTextColor),
-                    ),
-                    getVerticalSpace(25),
-                    SizedBox(
-                      width: getScreeWidth(285),
-                      child: Text(
-                        kLoremText,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: kLightTextColor),
+                  return Container(
+                    child: Column(children: [
+                      SvgPicture.asset(
+                        walkthroughIllustration[index],
+                        width: ResponsiveSize.screenWidth,
+                        fit: BoxFit.cover,
+                        matchTextDirection: true,
                       ),
-                    )
-                  ]);
+                      getVerticalSpace(42),
+                      Text(
+                        walkthrughHeading[index],
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: getTextSize(28),
+                            color: kDarkTextColor),
+                      ),
+                      getVerticalSpace(25),
+                      SizedBox(
+                        width: getScreeWidth(285),
+                        child: Text(
+                          kLoremText,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: kLightTextColor),
+                        ),
+                      )
+                    ]),
+                  );
                 }),
           ),
           Container(
-            height: ResponsiveSize.screenHeight * 0.1,
+            height: ResponsiveSize.screenHeight! * 0.1,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(

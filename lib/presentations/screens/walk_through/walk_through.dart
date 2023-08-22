@@ -1,9 +1,9 @@
-import 'package:finance/config/sizes.dart';
-import 'package:finance/constants/app_constants.dart';
-import 'package:finance/core/auth/welcome_screen.dart';
-import 'package:finance/widgets/custom_button.dart';
+import 'package:finance/presentations/config/sizes.dart';
+import 'package:finance/presentations/utils/app_constants.dart';
+import 'package:finance/presentations/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../auth/welcome_screen.dart';
 import 'components/body.dart';
 
 class WalkThroughScreen extends StatelessWidget {
@@ -21,7 +21,9 @@ class WalkThroughScreen extends StatelessWidget {
             textColor: kLightTextColor,
             buttonColor: Colors.transparent,
             isElevated: false,
-            press: () => Get.offAllNamed(WelcomScreen.routeName),
+            press: (){
+              
+            },
           ),
         ],
       ),
