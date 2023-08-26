@@ -1,28 +1,29 @@
-import 'package:finance/presentations/config/sizes.dart';
-import 'package:finance/presentations/utils/app_constants.dart';
-import 'package:finance/presentations/utils/app_text.dart';
-import 'package:finance/presentations/utils/assets_path.dart';
-import 'package:finance/presentations/widgets/custom_button.dart';
+import '../../config/routes/routes.dart';
+import '../../utils/app_constants.dart';
+import '../../utils/app_text.dart';
+import '../../utils/assets_path.dart';
+import '../../widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 
-import 'resgistration/registration.dart';
+import '../../utils/utils.dart';
 
-class WelcomScreen extends StatelessWidget {
+class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kPrimaryColor,
       body: SizedBox(
-        height: ResponsiveSize.screenHeight,
-        width: ResponsiveSize.screenWidth,
+        // height: ResponsiveSize.screenHeight,
+        width: size.width,
         child: Column(
           children: [
             Spacer(),
             Expanded(
               flex: 2,
-              child: SvgPicture.asset(mollet),
+              child: SvgPicture.asset(KAssetsPath.mollet),
             ),
             Expanded(
               flex: 2,
@@ -34,12 +35,12 @@ class WelcomScreen extends StatelessWidget {
                     kWelcomText,
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: getTextSize(28),
+                        fontSize: 28.sp,
                         color: Colors.white),
                   ),
-                  getVerticalSpace(25),
+                  Utils.verticalSpace(24),
                   SizedBox(
-                    width: getScreeWidth(285),
+                    width: 285.w,
                     child: Text(
                       kLoremText,
                       textAlign: TextAlign.center,
@@ -57,15 +58,19 @@ class WelcomScreen extends StatelessWidget {
                     textColor: kDarkTextColor,
                     buttonColor: Colors.white,
                     isElevated: true,
-                    press: () {},
+                    press: () {
+                      Navigator.pushNamed(
+                          context, RouteNames.authenticationScreen);
+                    },
                   ),
-                  getVerticalSpace(10),
+                  Utils.verticalSpace(10),
                   CustomButton(
                     text: kRegisterText.toUpperCase(),
                     textColor: Colors.white,
                     buttonColor: Colors.transparent,
                     isElevated: false,
-                    press: () => Get.toNamed(RegistrationScreen.routeName),
+                    press: () => Navigator.pushNamed(
+                        context, RouteNames.registration),
                   ),
                 ],
               ),

@@ -1,6 +1,6 @@
-import 'package:finance/presentations/config/sizes.dart';
-import 'package:finance/presentations/utils/app_constants.dart';
+import '../utils/app_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -43,8 +43,8 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: getScreenHeight(48),
-      width: getScreeWidth(325),
+      height: 48.h,
+      width: 325.w,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             primary: buttonColor,

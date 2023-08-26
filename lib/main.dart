@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:finance/presentations/config/routes/routes.dart';
+import 'presentations/config/routes/routes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'presentations/widgets/custom_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,24 +13,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Finance',
-      theme: ThemeData(
-        primaryColor: Color(0xff531EDC),
-        textTheme: GoogleFonts.poppinsTextTheme(),
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      debugShowCheckedModeBanner: false,
-      initialRoute: RouteNames.splash,
-      onGenerateRoute: RouteNames.generateRoute,
-      onUnknownRoute: (RouteSettings settings) {
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(child: Text('No route defined for ${settings.name}')),
-          ),
-        );
-      },
-    );
+    return ScreenUtilInit(
+        designSize: const Size(375.0, 812.0),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        useInheritedMediaQuery: true,
+        builder: (BuildContext context, child) {
+          return GetMaterialApp(
+            title: 'Finance',
+            debugShowCheckedModeBanner: false,
+            initialRoute: RouteNames.addLinkAccount,
+            onGenerateRoute: RouteNames.generateRoute,
+            onUnknownRoute: (RouteSettings settings) {
+              return MaterialPageRoute(
+                builder: (_) => Scaffold(
+                  body: Center(
+                      child: Text('No route defined for ${settings.name}')),
+                ),
+              );
+            },
+            theme: MyTheme.theme,
+          );
+        });
   }
 }

@@ -1,16 +1,22 @@
-import 'package:finance/presentations/config/sizes.dart';
-import 'package:finance/presentations/utils/app_constants.dart';
-import 'package:finance/presentations/widgets/custom_button.dart';
+import '../../utils/app_constants.dart';
+import '../../widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../auth/welcome_screen.dart';
 import 'components/body.dart';
 
-class WalkThroughScreen extends StatelessWidget {
-  static final String routeName = "/walk_through";
+class OnboardingScreen extends StatefulWidget {
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    ResponsiveSize.init(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -21,9 +27,7 @@ class WalkThroughScreen extends StatelessWidget {
             textColor: kLightTextColor,
             buttonColor: Colors.transparent,
             isElevated: false,
-            press: (){
-              
-            },
+            press: () {},
           ),
         ],
       ),
