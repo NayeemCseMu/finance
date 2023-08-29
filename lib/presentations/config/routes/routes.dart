@@ -3,6 +3,7 @@ import 'package:finance/presentations/screens/auth/fingerprint_screen.dart';
 import 'package:finance/presentations/screens/auth/set_password.dart';
 import 'package:finance/presentations/screens/auth/verification_screen.dart';
 import 'package:finance/presentations/screens/auth/welcome_screen.dart';
+import 'package:finance/presentations/screens/main_screen/main_screen.dart';
 import 'package:finance/presentations/screens/onboard/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -71,6 +72,9 @@ class RouteNames {
 
       case RouteNames.mooBank:
         return MaterialPageRoute(settings: settings, builder: (_) => MooBank());
+      
+      case RouteNames.mainScreen:
+        return MaterialPageRoute(settings: settings, builder: (_) => MainScreen());
 
       default:
         return MaterialPageRoute(

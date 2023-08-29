@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           return GetMaterialApp(
             title: 'Finance',
             debugShowCheckedModeBanner: false,
-            initialRoute: RouteNames.addLinkAccount,
+            initialRoute: RouteNames.mainScreen,
             onGenerateRoute: RouteNames.generateRoute,
             onUnknownRoute: (RouteSettings settings) {
               return MaterialPageRoute(

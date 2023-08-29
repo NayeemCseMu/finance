@@ -39,6 +39,8 @@ dependencies:
   cached_network_image: ^3.2.3
   intl: ^0.18.1
   pinput: ^3.0.1
+  persistent_bottom_nav_bar: ^5.0.2
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

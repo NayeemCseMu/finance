@@ -33,3 +33,12 @@ List<String> intAccount = [
   KAssetsPath.visa,
   KAssetsPath.papypal,
 ];
+
+List<Map<String, String>> homeItems = [
+  {"icon": KAssetsPath.transfer, "text": "Transfer"},
+  {"icon": KAssetsPath.wallet, "text": "Wallet"},
+  {"icon": KAssetsPath.voucher, "text": "Voucher"},
+  {"icon": KAssetsPath.paybill, "text": "Pay Bill"},
+  {"icon": KAssetsPath.exchange, "text": "Exchange"},
+  {"icon": KAssetsPath.more, "text": "More"},
+];

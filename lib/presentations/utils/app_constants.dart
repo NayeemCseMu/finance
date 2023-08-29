@@ -9,13 +9,13 @@ const Color kDarkTextColor = Color(0xff0B0320);
 const Color kLightTextColor = Color(0xff8C8A9A);
 const Color inputFieldBGColor = Color(0xFFE8F2);
 const Color inputBGColor = Color(0xFFF5F7FB);
+const Color navItemBg = Color(0xFFE4DEFA);
 const Color kYellowColor = Color(0xffF5BA03);
 const Color kBlueColor = Color(0xff3EC9DC);
 const Color kInactiveDotColor = Color(0xffD1D1D1);
 const Color transparent = Colors.transparent;
 final Color grayColorWithOpacity = const Color(0xff0B2C3D).withOpacity(.3);
 const Color borderColor = Color(0xFFF0F0F0);
-
 
 /*<-----------------App TextStyle----------------->*/
 TextStyle kNormalStyle = TextStyle(
